@@ -1,0 +1,113 @@
+/* Solo Leveling Discord Theme */
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600&display=swap');
+
+:root {
+    /* Background Colors */
+    --app-background: #0a0a0a; /* Noir profond */
+    --app-foreground: #111; /* Un peu plus clair pour le contraste */
+
+    /* Card & Element Settings */
+    --app-card-radius: 10px;
+    --app-card-border-color: #1b1b1b;
+
+    /* Header Bar Settings */
+    --header-bar-height: 56px;
+    --header-bar-color: #131313;
+
+    /* Accent Colors (Inspirés de Solo Leveling) */
+    --accent-hue: 250;
+    --accent-saturation: 85%;
+    --accent-lightness: 50%;
+    --accent-color: hsl(var(--accent-hue), var(--accent-saturation), var(--accent-lightness));
+    --accent-text-color: #fff;
+
+    /* Shadows & Glows */
+    --shadow-glow: 0 0 10px rgba(98, 0, 255, 0.8);
+    --button-shadow: 0 0 6px rgba(120, 0, 255, 0.6);
+
+    /* Text Settings */
+    --text-color: #d4d4d4;
+    --font-primary: 'Unbounded', sans-serif;
+
+    /* Popout & Modal Settings */
+    --popout-color: #151515;
+    --popout-radius: 8px;
+
+    /* Input Settings */
+    --input-color: #222;
+    --input-border-color: #444;
+    --input-text-color: #fff;
+    --input-placeholder-color: #888;
+
+    /* Scrollbar */
+    --scrollbar-color: #444;
+    --scrollbar-hover-color: #666;
+    --scrollbar-active-color: #888;
+}
+
+/* General Styling */
+body {
+    font-family: var(--font-primary);
+    background: var(--app-background);
+    color: var(--text-color);
+}
+
+/* Buttons */
+button {
+    background: var(--accent-color);
+    color: var(--accent-text-color);
+    border-radius: 6px;
+    box-shadow: var(--button-shadow);
+    transition: 0.3s;
+}
+
+button:hover {
+    background: hsl(var(--accent-hue), var(--accent-saturation), 60%);
+    box-shadow: 0 0 12px rgba(98, 0, 255, 0.9);
+}
+
+/* Glowing Effects for Elements */
+.card, .popout, .input {
+    border-radius: var(--popout-radius);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--app-foreground);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-hover-color);
+}
+
+/* Chat Messages */
+.message {
+    background: #141414;
+    border-left: 3px solid var(--accent-color);
+    padding: 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.message:hover {
+    background: #1a1a1a;
+    border-left: 3px solid hsl(var(--accent-hue), var(--accent-saturation), 60%);
+}
+
+/* Typing Animation */
+@keyframes typing-glow {
+    0% { box-shadow: 0 0 4px rgba(98, 0, 255, 0.3); }
+    50% { box-shadow: 0 0 8px rgba(98, 0, 255, 0.6); }
+    100% { box-shadow: 0 0 4px rgba(98, 0, 255, 0.3); }
+}
+
+.typing-indicator {
+    animation: typing-glow 1.5s infinite;
+}
